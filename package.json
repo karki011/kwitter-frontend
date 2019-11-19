@@ -4,7 +4,6 @@
   "homepage": "https://kenzie-academy.gitlab.io/se/fe/final-projects/assessment---kwitter-frontend",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.6.1",
     "connected-react-router": "^6.5.2",
     "history": "^4.10.1",
     "react": "^16.11.0",
@@ -17,7 +16,9 @@
     "redux": "^4.0.4",
     "redux-auth-wrapper": "^2.1.0",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "react-scripts start",
