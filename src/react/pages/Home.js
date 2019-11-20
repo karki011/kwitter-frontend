@@ -1,17 +1,16 @@
 import React from "react";
-import { Menu } from "../components";
-import { userIsAuthenticated } from "../HOCs";
-import "./Home.css";
+import { LoginForm } from "../components";
+import { userIsNotAuthenticated } from "../HOCs";
 
-class Home extends React.Component {
+class Login extends React.Component {
   render() {
     return (
-      <div className="container">
-        <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2 className="pageHeader">Home</h2>
-      </div>
+      <>
+        <h2>Kwitter. Your favorite microblogging platform</h2>
+        <LoginForm />
+      </>
     );
   }
 }
 
-export default userIsAuthenticated(Home);
+export default userIsNotAuthenticated(Login);
