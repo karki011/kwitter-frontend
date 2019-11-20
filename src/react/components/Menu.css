@@ -1,20 +1,53 @@
 #menu {
-  background-color: lightskyblue;
+  width: 220px;
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 0 1em;
-  border-radius: 1em;
+  margin: 0;
+  border-style: solid;
+  border-color: rgb(185, 184, 184);
+  border-width: 0px 2px 0px 0px;
 }
 
 #menu-links {
   display: flex;
+  flex-direction: column;
   padding-left: 1em;
 }
 
 #menu-links a {
+  font-size: 1.3em;
+  font-weight: 700;
   padding-right: 0.5em;
-  color: darkblue;
-  text-decoration: underline;
+  color: rgb(141, 140, 140);
+  text-decoration: none;
   cursor: pointer;
+}
+
+#menu-links a:hover {
+  color: black;
+}
+
+.link {
+  margin: 15px 0px 15px 0px;
+}
+
+#smallIcon {
+  height: 24px;
+  width: 24px;
+  margin-right: 15px;
+  color: rgb(141, 140, 140);
+}
+
+#kwitterIcon {
+  margin: 15px;
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
+  color: rgb(241, 119, 98);
+}
+
+#menu-links .link a.current {
+  color: rgb(241, 119, 98);
 }

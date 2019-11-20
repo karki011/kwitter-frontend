@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "../components";
+import { NavLink } from "../components";
 import pages from "../pages";
 
 class NotFound extends React.Component {
@@ -7,7 +7,7 @@ class NotFound extends React.Component {
     return (
       <>
         <p>Page not found for {this.props.location.pathname}</p>
-        <Link to={pages.Home.path}>Go Home</Link>
+        <NavLink to={pages.Home.path}>Go Home</NavLink>
       </>
     );
   }
