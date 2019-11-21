@@ -8,14 +8,13 @@ class Profile extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<Menu isAuthenticated={this.props.isAuthenticated} />
 				{/* <h2>Profile</h2> */}
 				{/* <MessageTextBox />
 							<MessageList /> */}
 				<Grid celled="internally">
 					<Grid.Row>
 						<Grid.Column width={3}>
-							<p>Side Nav</p>
+							<Menu isAuthenticated={this.props.isAuthenticated} />
 						</Grid.Column>
 						<Grid.Column width={10}>
 							<MessageTextBox />
