@@ -31,16 +31,17 @@ class Menu extends React.Component {
 					<div id="menu-links">
 						<div className="link">
 							<FontAwesomeIcon icon={faHome} id="smallIcon" />
-							<NavLink activeClassName="current" to="/messagefeed/:username">
-								Message Feed
+							<NavLink activeClassName="current" to="/profile/:username">
+								Home
 							</NavLink>
 						</div>
 						<div className="link">
 							<FontAwesomeIcon icon={faUser} id="smallIcon" />
-							<NavLink activeClassName="current" to="/profile/:username">
+							<NavLink activeClassName="current" to="/messagefeed/:username">
 								Profile
 							</NavLink>
 						</div>
+
 						<div className="link">
 							<FontAwesomeIcon icon={faSignOutAlt} id="smallIcon" />
 							<NavLink to="/" onClick={this.handleLogout}>
