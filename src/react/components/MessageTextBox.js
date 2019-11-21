@@ -8,7 +8,12 @@ class MessageTextBox extends Component {
 	render() {
 		return (
 			<Form className="form-control">
-				<Form.Field control={TextArea} label="Create Post" placeholder="What's on your mind? " />
+				<Form.Field
+					className="message-post-textarea"
+					control={TextArea}
+					label="Create Post"
+					placeholder="What's on your mind? "
+				/>
 				<Form.Field className="postBtn" control={Button}>
 					Post
 				</Form.Field>
