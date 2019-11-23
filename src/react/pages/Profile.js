@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MessageTextBox, MessageList } from "../components";
+import { Menu, MessageTextBox, MessageList, SignUpForm } from "../components";
 
 import { userIsAuthenticated } from "../HOCs";
 
@@ -13,6 +13,8 @@ class Profile extends React.Component {
         <MessageTextBox />
 
         <MessageList />
+
+        <SignUpForm />
       </>
     );
   }
