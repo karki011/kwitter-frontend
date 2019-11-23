@@ -10,6 +10,7 @@ const userIsAuthenticated = connectedRouterRedirect({
     state.auth.login &&
     state.auth.login.result &&
     state.auth.login.result.token !== undefined,
+    
   // A nice display name for this check
   wrapperDisplayName: "UserIsAuthenticated"
 });

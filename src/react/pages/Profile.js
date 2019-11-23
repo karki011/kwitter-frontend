@@ -1,6 +1,5 @@
 import React from 'react';
-import { Menu, MessageTextBox, MessageList } from '../components';
-
+import { Menu, MessageTextBox, MessageList, UserCard } from '../components';
 import { userIsAuthenticated } from '../HOCs';
 import { Grid } from 'semantic-ui-react';
 
@@ -26,6 +25,7 @@ class Profile extends React.Component {
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
+				<UserCard />
 			</React.Fragment>
 		);
 	}
