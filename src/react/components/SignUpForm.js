@@ -1,18 +1,22 @@
 import React from 'react';
 import { Spinner } from '.';
-import { withAsyncAction } from '../HOCs';
+//import { withAsyncAction } from '../HOCs';
 import './LoginForm.css';
 import logo from './logo.png';
 import { Button, Form, Grid, Header, Image, Segment, Message } from 'semantic-ui-react';
-// import { SignUpForm } from '../components';
+import { connect } from 'react-redux';
 import { Link } from '.';
 
-class LoginForm extends React.Component {
-	state = { username: '', password: '' };
+class SignUpForm extends React.Component {
+	state = { username: '', password: '', email: '' };
 
-	handleLogin = (e) => {
-		e.preventDefault();
-		this.props.login(this.state);
+	handleSignUp = (event) => {
+		// translate state value to get this then put elsewhere
+		this.props.SignUp({
+			username: this.state.username,
+			password: this.state.password,
+			email: this.state.email
+		});
 	};
 
 	handleChange = (e) => {
@@ -26,9 +30,9 @@ class LoginForm extends React.Component {
 				<Grid textAlign="center" style={{ height: '100vh' }} verticalAlign="middle">
 					<Grid.Column style={{ maxWidth: 450 }}>
 						<Header as="h2" color="teal" textAlign="center">
-							<Image src={logo} alt="logo" avatar /> Log-in to your account
+							<Image src={logo} alt="logo" avatar /> Create your account
 						</Header>
-						<Form id="login-form" onSubmit={this.handleLogin} size="large">
+						<Form id="SignUp-form" onSubmit={this.handleSignUp} size="large">
 							<Segment stacked>
 								<Form.Input
 									fluid
@@ -51,17 +55,27 @@ class LoginForm extends React.Component {
 									required
 									onChange={this.handleChange}
 								/>
+								<Form.Input
+									fluid
+									icon="lock"
+									iconPosition="left"
+									placeholder="Email"
+									type="email"
+									name="email"
+									required
+									onChange={this.handleChange}
+								/>
 
 								<Button type="submit" disabled={loading} color="teal" fluid size="large">
-									Login
+									Sign Up
 								</Button>
+
+								<Message>
+									{/* <a href="#">Sign Up</a> */}
+									<Link to="/">LOGIN</Link>
+								</Message>
 							</Segment>
 						</Form>
-						<Message>
-							New to us?
-							{/* <a href="#">Sign Up</a> */}
-							<Link to="/signup">Sign Up</Link>
-						</Message>
 						{loading && <Spinner name="circle" color="blue" />}
 						{error && <p style={{ color: 'red' }}>{error.message}</p>}
 					</Grid.Column>
@@ -70,5 +84,16 @@ class LoginForm extends React.Component {
 		);
 	}
 }
+const mapStateToProps = (state) => {
+	return {
+		result: state.SignUpResult
+	};
+};
 
-export default withAsyncAction('auth', 'login')(LoginForm);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		SignUpForm: (SignUpData) => dispatch(SignUpForm(SignUpData))
+	};
+};
+// export default SignUp;
+export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
