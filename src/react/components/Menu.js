@@ -14,30 +14,19 @@ class Menu extends React.Component {
 
 	render() {
 		return (
-			// <div id="menu">
-			//   <h1>Kwitter</h1>
-			//   {this.props.isAuthenticated && (
-			//     <div id="menu-links">
-			//       <Link to="/messagefeed">Message Feed</Link>
-			//       <Link to="/" onClick={this.handleLogout}>
-			//         Logout
-			//       </Link>
-			//     </div>
-			//   )}
-			// </div>
 			<div id="menu">
 				<FontAwesomeIcon icon={faKiwiBird} id="kwitterIcon" />
 				{this.props.isAuthenticated && (
 					<div id="menu-links">
 						<div className="link">
 							<FontAwesomeIcon icon={faHome} id="smallIcon" />
-							<NavLink activeClassName="current" to="#">
+							<NavLink activeClassName="current" to="/">
 								Home
 							</NavLink>
 						</div>
 						<div className="link">
 							<FontAwesomeIcon icon={faUser} id="smallIcon" />
-							<NavLink activeClassName="current" to="/messagefeed/:username">
+							<NavLink activeClassName="current" to="/edit/:username">
 								Profile
 							</NavLink>
 						</div>

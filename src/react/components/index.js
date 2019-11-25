@@ -8,5 +8,5 @@ export { default as SignUpForm } from './SignUpForm';
 export { default as UserCard } from './UserCard';
 
 // components from other packages
-export { Switch, Route, Link } from 'react-router-dom';
+export { Switch, Route, Link, NavLink } from 'react-router-dom';
 export { default as Spinner } from 'react-spinkit';
