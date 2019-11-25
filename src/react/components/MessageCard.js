@@ -19,9 +19,10 @@ class MessageCard extends React.Component {
           borderRadius: "10px"
         }}
       >
-  <h4>{this.props.username}</h4>
-  <p>{this.props.text}</p>
-  <p>{new Date (this.props.createdAt).toDateString()}</p>
+        <h4>{this.props.msg.username}</h4>
+        <p>{this.props.msg.text}</p>
+        <p>{new Date(this.props.msg.createdAt).toDateString()}</p>
+        <p>Likes: {this.props.msg.likes.length}</p>
       </div>
     );
   }
