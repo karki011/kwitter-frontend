@@ -3,10 +3,10 @@ import { GETMESSAGES } from '../actionTypes';
 
 const url = domain + '/messages';
 
-export const getMessages = () => (dispatch) => {
+export const getMessages = (username) => (dispatch) => {
 	dispatch({ type: GETMESSAGES.START });
-
-	return fetch(url, {
+	const endPointUrl = username ? url + '?username=' + username : url;
+	return fetch(endPointUrl, {
 		method: 'GET',
 		headers: jsonHeaders
 	})

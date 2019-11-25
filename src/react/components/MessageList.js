@@ -44,7 +44,7 @@ import { Spinner } from '../components';
 
 class MessageList extends React.Component {
 	componentDidMount() {
-		this.props.getMessages();
+		this.props.getMessages(this.props.username);
 	}
 	render() {
 		if (this.props.result === null) {

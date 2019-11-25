@@ -14,7 +14,7 @@ class Profile extends React.Component {
 						</Grid.Column>
 						<Grid.Column width={10}>
 							<MessageTextBox />
-							<MessageList />
+							<MessageList username={this.props.match.params.username} />
 						</Grid.Column>
 						<Grid.Column width={3}>
 							<RecentMessageFeed />
