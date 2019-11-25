@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
 							</Segment>
 						</Form>
 						<Message>
-							New to us?
+							New to us? &nbsp;
 							{/* <a href="#">Sign Up</a> */}
 							<Link to="/signup">Sign Up</Link>
 						</Message>
