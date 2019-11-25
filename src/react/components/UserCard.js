@@ -35,10 +35,10 @@ class UserCard extends React.Component {
 						</Card.Description>
 					</Card.Content>
 					<Card.Content extra>
-						<a>
+						<p>
 							<Icon name="user" />
 							22 Friends
-						</a>
+						</p>
 					</Card.Content>
 				</Card>
 			</React.Fragment>
