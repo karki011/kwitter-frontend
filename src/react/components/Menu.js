@@ -26,7 +26,7 @@ class Menu extends React.Component {
 						</div>
 						<div className="link">
 							<FontAwesomeIcon icon={faUser} id="smallIcon" />
-							<NavLink activeClassName="current" to="/edit/:username">
+							<NavLink activeClassName="current" to="/edit/">
 								Profile
 							</NavLink>
 						</div>

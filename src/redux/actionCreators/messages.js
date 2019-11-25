@@ -1,12 +1,23 @@
-// export const COMPOSE_MESSAGE = "COMPOSE_MESSAGE"
+import { domain, jsonHeaders, handleJsonResponse } from './constants';
+import { GETMESSAGES } from '../actionTypes';
 
-// export const composeMessage = () => {
-//     return {
-//         const messageObj = {
-            
-//         }
+const url = domain + '/messages';
 
-//         type: COMPOSE_MESSAGE;
-//         payload:
-//     }
-// }
+export const getMessages = () => (dispatch) => {
+	dispatch({ type: GETMESSAGES.START });
+
+	return fetch(url, {
+		method: 'GET',
+		headers: jsonHeaders
+	})
+		.then(handleJsonResponse)
+		.then((result) => {
+			return dispatch({
+				type: GETMESSAGES.SUCCESS,
+				payload: result
+			});
+		})
+		.catch((err) => {
+			return Promise.reject(dispatch({ type: GETMESSAGES.FAIL, payload: err }));
+		});
+};

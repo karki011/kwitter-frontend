@@ -7,16 +7,13 @@ class UserProfileEdit extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				{/* <h2>Profile</h2> */}
-				{/* <MessageTextBox />
-							<MessageList /> */}
 				<Grid celled="internally">
 					<Grid.Row>
 						<Grid.Column width={3}>
 							<Menu isAuthenticated={this.props.isAuthenticated} />
 						</Grid.Column>
 						<Grid.Column width={10}>
-							<UserCard />
+							<UserCard username="testdude" />
 						</Grid.Column>
 						<Grid.Column width={3}>
 							<RecentMessageFeed />

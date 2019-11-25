@@ -7,9 +7,6 @@ class Profile extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				{/* <h2>Profile</h2> */}
-				{/* <MessageTextBox />
-							<MessageList /> */}
 				<Grid celled="internally">
 					<Grid.Row>
 						<Grid.Column width={3}>
@@ -24,7 +21,7 @@ class Profile extends React.Component {
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
-				<UserCard />
+				<UserCard username={this.props.match.params.username} />
 			</React.Fragment>
 		);
 	}
