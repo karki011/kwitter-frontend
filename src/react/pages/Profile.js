@@ -21,7 +21,7 @@ class Profile extends React.Component {
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
-				<UserCard username={this.props.match.params.username} />
+				{/* <UserCard username={this.props.match.params.username} /> */}
 			</React.Fragment>
 		);
 	}
