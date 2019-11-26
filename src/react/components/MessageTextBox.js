@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Form, TextArea, Button } from "semantic-ui-react";
 import "./MessageTextBox.css";
-// import {messages} from "./MessageList"
 
 
 

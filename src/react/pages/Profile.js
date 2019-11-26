@@ -52,7 +52,7 @@ class Profile extends React.Component {
   handleComposeMessage = () => {
     const newMessageList =  [...this.state.kweetMessage];
     // console.log({ kweetmessage: this.state.kweetMessage })
-    newMessageList.push({
+    newMessageList.unshift({
       id: Math.floor(Math.random() * 1000000000),
       text: this.state.value,
       username: "TestUserName",

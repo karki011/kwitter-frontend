@@ -1,6 +1,5 @@
 import React from "react";
 import MessageCard from "./MessageCard";
-// import {connect} from "react-redux";
 
 
 
@@ -15,20 +14,5 @@ export class MessageList extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return{
-//     kweetMessage: state.kweetMessage
-//   };
-// };
-
-// const mapDispatchToProps = {
-//   handleComposeMessage,
-//   handleChange
-//  }
-
-// export default connect(
-//   mapStateToProps, 
-//   null
-//   )(MessageList);
 
 export default MessageList
