@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from './constants';
-import { GETMESSAGES } from '../actionTypes';
+import { GETMESSAGES, POSTMESSAGE } from '../actionTypes';
 
 const url = domain + '/messages';
 
@@ -19,5 +19,26 @@ export const getMessages = (username) => (dispatch) => {
 		})
 		.catch((err) => {
 			return Promise.reject(dispatch({ type: GETMESSAGES.FAIL, payload: err }));
+		});
+};
+
+export const postMessage = (postMessageBody) => (dispatch, getState) => {
+	dispatch({ type: POSTMESSAGE.START });
+	const token = getState().auth.login.result.token;
+
+	return fetch(url, {
+		method: 'POST',
+		headers: { Authorization: 'Bearer ' + token, ...jsonHeaders },
+		body: JSON.stringify(postMessageBody)
+	})
+		.then(handleJsonResponse)
+		.then((result) => {
+			return dispatch({
+				type: POSTMESSAGE.SUCCESS,
+				payload: result
+			});
+		})
+		.catch((err) => {
+			return Promise.reject(dispatch({ type: POSTMESSAGE.FAIL, payload: err }));
 		});
 };
