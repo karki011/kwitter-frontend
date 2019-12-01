@@ -1,22 +1,16 @@
 import React from 'react';
 import { Spinner } from '.';
-//import { withAsyncAction } from '../HOCs';
-import './LoginForm.css';
+import { withAsyncAction } from '../HOCs';
 import logo from './logo.png';
 import { Button, Form, Grid, Header, Image, Segment, Message } from 'semantic-ui-react';
-import { connect } from 'react-redux';
 import { Link } from '.';
 
 class SignUpForm extends React.Component {
-	state = { username: '', password: '', email: '' };
+	state = { username: '', password: '', displayName: '' };
 
-	handleSignUp = (event) => {
-		// translate state value to get this then put elsewhere
-		this.props.SignUp({
-			username: this.state.username,
-			password: this.state.password,
-			email: this.state.email
-		});
+	handleLogin = (e) => {
+		e.preventDefault();
+		this.props.postUser(this.state);
 	};
 
 	handleChange = (e) => {
@@ -32,7 +26,7 @@ class SignUpForm extends React.Component {
 						<Header as="h2" color="teal" textAlign="center">
 							<Image src={logo} alt="logo" avatar /> Create your account
 						</Header>
-						<Form id="SignUp-form" onSubmit={this.handleSignUp} size="large">
+						<Form id="SignUp-form" onSubmit={this.handleLogin} size="large">
 							<Segment stacked>
 								<Form.Input
 									fluid
@@ -49,9 +43,9 @@ class SignUpForm extends React.Component {
 									fluid
 									icon="lock"
 									iconPosition="left"
-									placeholder="Password"
-									type="password"
-									name="password"
+									placeholder="Display Name"
+									type="text"
+									name="displayName"
 									required
 									onChange={this.handleChange}
 								/>
@@ -59,9 +53,9 @@ class SignUpForm extends React.Component {
 									fluid
 									icon="lock"
 									iconPosition="left"
-									placeholder="Email"
-									type="email"
-									name="email"
+									placeholder="Password"
+									type="password"
+									name="password"
 									required
 									onChange={this.handleChange}
 								/>
@@ -71,7 +65,6 @@ class SignUpForm extends React.Component {
 								</Button>
 
 								<Message>
-									{/* <a href="#">Sign Up</a> */}
 									<Link to="/">LOGIN</Link>
 								</Message>
 							</Segment>
@@ -84,16 +77,5 @@ class SignUpForm extends React.Component {
 		);
 	}
 }
-const mapStateToProps = (state) => {
-	return {
-		result: state.SignUpResult
-	};
-};
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		SignUpForm: (SignUpData) => dispatch(SignUpForm(SignUpData))
-	};
-};
-// export default SignUp;
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm);
+export default withAsyncAction('users', 'postUser')(SignUpForm);
