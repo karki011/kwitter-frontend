@@ -15,7 +15,7 @@ class RecentMessageFeed extends React.Component {
 
 		return messages.map((message) => {
 			return (
-				<Feed size="large">
+				<Feed size="large" key={message.id}>
 					<Feed.Event>
 						<Feed.Content>
 							<Feed.Summary>
