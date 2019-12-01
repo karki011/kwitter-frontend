@@ -22,7 +22,7 @@ export const getMessages = (username) => (dispatch) => {
 		});
 };
 
-export const postMessage = (postMessageBody) => (dispatch, getState) => {
+export const _postMessage = (postMessageBody) => (dispatch, getState) => {
 	dispatch({ type: POSTMESSAGE.START });
 	const token = getState().auth.login.result.token;
 
@@ -41,4 +41,10 @@ export const postMessage = (postMessageBody) => (dispatch, getState) => {
 		.catch((err) => {
 			return Promise.reject(dispatch({ type: POSTMESSAGE.FAIL, payload: err }));
 		});
+};
+
+export const postMessage = (postMessageBody) => (dispatch, getState) => {
+	return dispatch(_postMessage(postMessageBody)).then(() => {
+		return dispatch(getMessages());
+	});
 };
