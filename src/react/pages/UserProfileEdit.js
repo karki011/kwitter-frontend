@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, RecentMessageFeed, UserCard } from '../components';
+import { Menu, RecentMessageFeed, UserCard, MessageList } from '../components';
 import { userIsAuthenticated } from '../HOCs';
 import { Grid } from 'semantic-ui-react';
 
@@ -13,7 +13,9 @@ class UserProfileEdit extends React.Component {
 							<Menu isAuthenticated={this.props.isAuthenticated} />
 						</Grid.Column>
 						<Grid.Column width={10}>
-							<UserCard username="testdude" />
+							<UserCard username={"testdude"} /> 
+							<h3>My Kweets</h3>
+							<MessageList username ={"testdude"} />
 						</Grid.Column>
 						<Grid.Column width={3}>
 							<RecentMessageFeed />
@@ -24,5 +26,6 @@ class UserProfileEdit extends React.Component {
 		);
 	}
 }
+
 
 export default userIsAuthenticated(UserProfileEdit);
