@@ -36,19 +36,4 @@ class Profile extends React.Component {
 	}
 }
 
-// const mapStateToProps = (state) => {
-//   return{
-//     text: state.text
-//   }
-// }
-
-// const mapDispatchToProps = {
-//   postMessage
-// }
-
-// export const connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Profile);
-// export withAsyncAction ('messages','postMessage')(Profile)
 export default userIsAuthenticated(Profile);
