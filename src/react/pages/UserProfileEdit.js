@@ -3,7 +3,8 @@ import {
   Menu,
   RecentMessageFeed,
   UserCard,
-  DeleteUserButton
+  DeleteUserButton,
+  MessageList
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 import { Grid } from "semantic-ui-react";
@@ -20,6 +21,8 @@ class UserProfileEdit extends React.Component {
             <Grid.Column width={10}>
               <UserCard username="testdude" />
               <DeleteUserButton />
+              <h3>My Kweets</h3>
+							<MessageList username ={"testdude"} />
             </Grid.Column>
             <Grid.Column width={3}>
               <RecentMessageFeed />
@@ -30,5 +33,6 @@ class UserProfileEdit extends React.Component {
     );
   }
 }
+
 
 export default userIsAuthenticated(UserProfileEdit);

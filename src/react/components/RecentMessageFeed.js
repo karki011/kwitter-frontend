@@ -1,5 +1,6 @@
 import React from 'react';
 import { Feed, Icon } from 'semantic-ui-react';
+import { userIsAuthenticated } from '../HOCs'
 
 const messages = [
 	{
@@ -51,7 +52,7 @@ class RecentMessageFeed extends React.Component {
 					</Feed.Label> */}
 						<Feed.Content>
 							<Feed.Summary>
-								<Feed.User>{message.username} </Feed.User> {message.text}
+								<Feed.User>{message.username}</Feed.User> {message.text}
 								<Feed.Date>{message.createdAt}</Feed.Date>
 							</Feed.Summary>
 							<Feed.Meta>
@@ -68,4 +69,4 @@ class RecentMessageFeed extends React.Component {
 	}
 }
 
-export default RecentMessageFeed;
+export default userIsAuthenticated(RecentMessageFeed);
