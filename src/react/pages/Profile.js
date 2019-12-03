@@ -1,8 +1,12 @@
-import React from 'react';
-import { Menu, MessageTextBox, MessageList, RecentMessageFeed } from '../components';
-import { userIsAuthenticated } from '../HOCs';
-// import { connect } from 'react-redux';
-import { Grid } from 'semantic-ui-react';
+import React from "react";
+import {
+  Menu,
+  MessageTextBox,
+  MessageList,
+  RecentMessageFeed
+} from "../components";
+import { userIsAuthenticated } from "../HOCs";
+import { Grid } from "semantic-ui-react";
 
 
 class Profile extends React.Component {
@@ -20,7 +24,7 @@ class Profile extends React.Component {
 						<Grid.Column width={10}>
               <MessageTextBox 
               handleChange= {this.props.handleChange}
-              value={this.props.text}
+			  value={this.props.text}
               postMessage={this.props.handleComposeMessage} 
               />
 							<MessageList username={this.props.username} />

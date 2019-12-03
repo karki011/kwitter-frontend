@@ -1,30 +1,37 @@
-import React from 'react';
-import { Menu, RecentMessageFeed, UserCard, MessageList } from '../components';
-import { userIsAuthenticated } from '../HOCs';
-import { Grid } from 'semantic-ui-react';
+import React from "react";
+import {
+  Menu,
+  RecentMessageFeed,
+  UserCard,
+  DeleteUserButton,
+  MessageList
+} from "../components";
+import { userIsAuthenticated } from "../HOCs";
+import { Grid } from "semantic-ui-react";
 
 class UserProfileEdit extends React.Component {
-	render() {
-		return (
-			<React.Fragment>
-				<Grid celled="internally">
-					<Grid.Row>
-						<Grid.Column width={3}>
-							<Menu isAuthenticated={this.props.isAuthenticated} />
-						</Grid.Column>
-						<Grid.Column width={10}>
-							<UserCard username={"testdude"} /> 
-							<h3>My Kweets</h3>
+  render() {
+    return (
+      <React.Fragment>
+        <Grid celled="internally">
+          <Grid.Row>
+            <Grid.Column width={3}>
+              <Menu isAuthenticated={this.props.isAuthenticated} />
+            </Grid.Column>
+            <Grid.Column width={10}>
+              <UserCard username="testdude" />
+              <DeleteUserButton />
+              <h3>My Kweets</h3>
 							<MessageList username ={"testdude"} />
-						</Grid.Column>
-						<Grid.Column width={3}>
-							<RecentMessageFeed />
-						</Grid.Column>
-					</Grid.Row>
-				</Grid>
-			</React.Fragment>
-		);
-	}
+            </Grid.Column>
+            <Grid.Column width={3}>
+              <RecentMessageFeed />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </React.Fragment>
+    );
+  }
 }
 
 
