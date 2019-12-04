@@ -24,7 +24,7 @@ class UserProfileEdit extends React.Component {
               />
               <DeleteUserButton />
               <h3>My Kweets</h3>
-              <MessageList username={this.props.match.params.username} />
+							<MessageList username ={JSON.parse(localStorage.login).result.username} />
             </Grid.Column>
             <Grid.Column width={3}>
               <RecentMessageFeed />
