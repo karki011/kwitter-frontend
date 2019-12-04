@@ -1,0 +1,9 @@
+#messageCard{
+    width: 50%;
+    
+}
+
+#messageCardContainer{
+    display: flex;
+    justify-content: center;
+}
