@@ -4,9 +4,9 @@ import "./MessageTextBox.css";
 import { withAsyncAction } from "../HOCs";
 
 class MessageTextBox extends Component {
-  componentDidMount() {
-    this.props.postMessage(this.props.postMessageBody);
-  }
+  // componentDidMount() {
+  //   this.props.postMessage(this.props.postMessageBody);
+  // }
 
   state = { text: "" };
 
