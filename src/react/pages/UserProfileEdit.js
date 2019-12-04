@@ -19,10 +19,10 @@ class UserProfileEdit extends React.Component {
               <Menu isAuthenticated={this.props.isAuthenticated} />
             </Grid.Column>
             <Grid.Column width={10}>
-              <UserCard username="testdude" />
+              <UserCard username={"testchick"} />
               <DeleteUserButton />
               <h3>My Kweets</h3>
-							<MessageList username ={"testdude"} />
+							<MessageList username ={"testchick"} />
             </Grid.Column>
             <Grid.Column width={3}>
               <RecentMessageFeed />
