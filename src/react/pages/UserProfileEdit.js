@@ -19,10 +19,12 @@ class UserProfileEdit extends React.Component {
               <Menu isAuthenticated={this.props.isAuthenticated} />
             </Grid.Column>
             <Grid.Column width={10}>
-              <UserCard username={"testchick"} />
+              <UserCard
+                username={JSON.parse(localStorage.login).result.username}
+              />
               <DeleteUserButton />
               <h3>My Kweets</h3>
-							<MessageList username ={"testchick"} />
+              <MessageList username={this.props.match.params.username} />
             </Grid.Column>
             <Grid.Column width={3}>
               <RecentMessageFeed />
@@ -33,6 +35,5 @@ class UserProfileEdit extends React.Component {
     );
   }
 }
-
 
 export default userIsAuthenticated(UserProfileEdit);
