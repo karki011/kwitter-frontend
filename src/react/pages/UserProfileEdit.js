@@ -22,7 +22,7 @@ class UserProfileEdit extends React.Component {
               <UserCard username={"testchick"} />
               <DeleteUserButton />
               <h3>My Kweets</h3>
-							<MessageList username ={"testchick"} />
+							<MessageList username ={JSON.parse(localStorage.login).result.username} />
             </Grid.Column>
             <Grid.Column width={3}>
               <RecentMessageFeed />
