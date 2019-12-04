@@ -6,7 +6,7 @@ import { Spinner } from '../components';
 
 class MessageList extends React.Component {
 	componentDidMount() {
-		this.props.getMessages(this.props.username);//need to also create a MessageList for the logged-in users messages only
+		this.props.getMessages(this.props.username);
 	}
 	render() {
 		if (this.props.result === null) {
