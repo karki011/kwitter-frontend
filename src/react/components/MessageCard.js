@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from '.';
 class MessageCard extends React.Component {
 	render() {
 		return (
@@ -11,7 +11,9 @@ class MessageCard extends React.Component {
 					borderRadius: '10px'
 				}}
 			>
-				<h4>{this.props.username}</h4>
+				<Link to={`/profile/${this.props.username}`}>
+					<h4>{this.props.username}</h4>{' '}
+				</Link>
 				<p>{this.props.text}</p>
 				<p>{new Date(this.props.createdAt).toDateString()}</p>
 			</div>
