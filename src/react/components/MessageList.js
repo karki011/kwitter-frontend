@@ -18,9 +18,11 @@ class MessageList extends React.Component {
 			return (
 				<MessageCard
 					key={message.id}
+					id = {message.id}
 					username={message.username}
 					text={message.text}
 					createdAt={message.createdAt}
+					currentUser={JSON.parse(localStorage.login).result.username}
 				/>
 			);
 		});
