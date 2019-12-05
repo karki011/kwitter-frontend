@@ -1,12 +1,14 @@
 import React from 'react';
 import { withAsyncAction } from '../HOCs';
-import { Button, Card, Image, Icon } from 'semantic-ui-react';
+import { Button, Card, Image } from 'semantic-ui-react';
 import './MessageCard.css';
+import PostLike from './PostLike';
 
 class MessageCard extends React.Component {
 	// componentDidMount(){
 	//   this.props.deleteMessage()
 	// }
+
 	render() {
 		return (
 			<div id="messageCardContainer">
@@ -26,9 +28,7 @@ class MessageCard extends React.Component {
 
 						<Card.Content>
 							<hr />
-							<Button>
-								<Icon name="thumbs up outline" />Like
-							</Button>
+							<PostLike />
 						</Card.Content>
 
 						{/* <p>Likes: {this.props.message.likes.length}</p> */}
