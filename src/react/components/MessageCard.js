@@ -1,6 +1,6 @@
 import React from 'react';
 import { withAsyncAction } from '../HOCs';
-import { Button, Card, Image } from 'semantic-ui-react';
+import { Button, Card, Image, Icon } from 'semantic-ui-react';
 import './MessageCard.css';
 
 class MessageCard extends React.Component {
@@ -23,6 +23,14 @@ class MessageCard extends React.Component {
 						<Card.Content>
 							<p>{new Date(this.props.createdAt).toDateString()}</p>
 						</Card.Content>
+
+						<Card.Content>
+							<hr />
+							<Button>
+								<Icon name="thumbs up outline" />Like
+							</Button>
+						</Card.Content>
+
 						{/* <p>Likes: {this.props.message.likes.length}</p> */}
 						<br />
 						{this.props.currentUser === this.props.username && (

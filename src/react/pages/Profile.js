@@ -3,7 +3,7 @@ import { Menu, MessageTextBox, MessageList, RecentMessageFeed } from '../compone
 import { userIsAuthenticated } from '../HOCs';
 import { Grid } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faHome, faSignOutAlt, faKiwiBird } from '@fortawesome/free-solid-svg-icons';
+import { faKiwiBird } from '@fortawesome/free-solid-svg-icons';
 
 class Profile extends React.Component {
 	render() {
