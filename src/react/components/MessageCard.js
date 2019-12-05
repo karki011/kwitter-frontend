@@ -26,10 +26,12 @@ class MessageCard extends React.Component {
 							<p>{new Date(this.props.createdAt).toDateString()}</p>
 						</Card.Content>
 
+						<Card.Content>
 							<hr />
 							<PostLike />
-						
-						<br />
+						</Card.Content>
+
+						{/* <p>Likes: {this.props.message.likes.length}</p> */}
 						<br />
 						{this.props.currentUser === this.props.username && (
 							<Button
