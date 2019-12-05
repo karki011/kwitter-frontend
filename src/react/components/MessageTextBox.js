@@ -35,6 +35,7 @@ class MessageTextBox extends Component {
           className="postBtn"
           control={Button}
           onClick={this.handleComposeMessage}
+          color={"teal"}
         >
           Post
         </Form.Field>
