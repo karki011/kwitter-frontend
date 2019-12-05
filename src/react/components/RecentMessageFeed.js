@@ -45,7 +45,7 @@ import { Spinner } from '../components';
 
 class RecentMessageFeed extends React.Component {
 	componentDidMount() {
-		this.props.getMessages();
+		// this.props.getMessages();
 	}
 	render() {
 		if (this.props.result === null) {
