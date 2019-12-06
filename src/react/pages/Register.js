@@ -1,15 +1,15 @@
-import React from "react";
-import { SignUpForm } from "../components";
-// import { userIsNotAuthenticated } from "../HOCs";
+import React from 'react';
+import { SignUpForm } from '../components';
+import { userIsNotAuthenticated } from '../HOCs';
 
 class Register extends React.Component {
-  render() {
-    return (
-      <>
-        <SignUpForm />
-      </>
-    );
-  }
+	render() {
+		return (
+			<React.Fragment>
+				<SignUpForm />
+			</React.Fragment>
+		);
+	}
 }
 
-export default Register;
+export default userIsNotAuthenticated(Register);
