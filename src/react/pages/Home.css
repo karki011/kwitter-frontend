@@ -1,0 +1,38 @@
+.container {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: 100vh;
+  grid-template-areas: "left right";
+}
+
+.left-side {
+  grid-area: left;
+  background-image: linear-gradient(#2793fa, #29b5ad);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-side {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prop-value {
+  display: flex;
+  font-family: "Gothic A1 Black", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-left: 25%;
+}
+
+.prop-icon {
+  margin-right: 20px;
+}
+
+.prop-icon-small {
+  margin-right: 25px;
+}
