@@ -1,9 +1,7 @@
 import React from 'react';
-import { Menu, MessageTextBox, MessageList, RecentMessageFeed } from '../components';
+import { Menu, MessageTextBox, MessageList, RecentMessageFeed, SearchPage } from '../components';
 import { userIsAuthenticated } from '../HOCs';
 import { Grid } from 'semantic-ui-react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faKiwiBird } from '@fortawesome/free-solid-svg-icons';
 
 class Profile extends React.Component {
 	render() {
@@ -26,8 +24,7 @@ class Profile extends React.Component {
 							<MessageList username={this.props.username} />
 						</Grid.Column>
 						<Grid.Column width={3}>
-							<FontAwesomeIcon icon={faKiwiBird} id="kwitterIcon" />
-							<hr />
+							<SearchPage username={this.props.username} />
 							<RecentMessageFeed />
 						</Grid.Column>
 					</Grid.Row>
