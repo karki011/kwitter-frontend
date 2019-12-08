@@ -10,6 +10,7 @@ class Home extends React.Component {
     return (
       <>
         <div className="container">
+          <div className="shapes"></div>
           <div className="left-side">
             <div className="prop-value">
               <FontAwesomeIcon icon={faEdit} className="prop-icon" />
