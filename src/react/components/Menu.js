@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from '.';
 import { NavLink } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../HOCs";
