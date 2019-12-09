@@ -24,6 +24,7 @@ export const getUser = (username) => (dispatch) => {
 		});
 };
 
+
 let username = '';
 let token = '';
 

@@ -5,7 +5,7 @@ import { Grid } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faKiwiBird } from '@fortawesome/free-solid-svg-icons';
 
-class Profile extends React.Component {
+class MessageFeed extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
@@ -38,4 +38,4 @@ class Profile extends React.Component {
 	}
 }
 
-export default userIsAuthenticated(Profile);
+export default userIsAuthenticated(MessageFeed);

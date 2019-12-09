@@ -3,6 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Menu.css";
 import { withAsyncAction } from "../HOCs";
+import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -31,16 +32,14 @@ class Menu extends React.Component {
               <NavLink
                 exact
                 activeClassName="current"
-                to={`/profile/${
-                  JSON.parse(localStorage.login).result.username
-                }`}
+                to={"/MessageFeed/"}
               >
                 Home
               </NavLink>
             </div>
             <div className="link">
               <FontAwesomeIcon icon={faUser} id="smallIcon" />
-              <NavLink exact activeClassName="current" to="/edit/">
+              <NavLink activeClassName="current" to={`/profile/${this.props.username}`} onClick= {console.log(this.props)}>
                 Profile
               </NavLink>
             </div>
@@ -58,4 +57,10 @@ class Menu extends React.Component {
   }
 }
 
-export default withAsyncAction("auth", "logout")(Menu);
+const mapStateToProps = state => {
+  if(state.auth.login.result){
+    return {username: state.auth.login.result.username }
+  } else return {};
+}
+
+export default connect (mapStateToProps)(withAsyncAction("auth", "logout")(Menu));
