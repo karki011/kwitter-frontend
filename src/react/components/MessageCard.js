@@ -3,6 +3,7 @@ import { withAsyncAction } from "../HOCs";
 import { Button, Card, Image } from "semantic-ui-react";
 import "./MessageCard.css";
 import PostLike from "./PostLike";
+import { Link } from ".";
 
 class MessageCard extends React.Component {
   // componentDidMount(){
@@ -20,7 +21,9 @@ class MessageCard extends React.Component {
               src="http://simpleicon.com/wp-content/uploads/user1.svg"
             />
             <Card.Header>
-              <h4>{this.props.username}</h4>
+              <Link to={`/profile/${this.props.username}`}>
+                <h4>{this.props.username}</h4>
+              </Link>
             </Card.Header>
             <Card.Description>
               <p>{this.props.text}</p>
