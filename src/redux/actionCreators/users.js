@@ -98,7 +98,7 @@ const _putUserPicture = formElement => (dispatch, getState) => {
       Authorization: "Bearer " + token,
       Accept: "application/json"
     },
-    body: new FormData(formElement)
+    body: formElement
   })
     .then(handleJsonResponse)
     .then(result => {
