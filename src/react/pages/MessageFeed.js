@@ -3,7 +3,7 @@ import { Menu, MessageTextBox, MessageList, RecentMessageFeed, SearchPage } from
 import { userIsAuthenticated } from '../HOCs';
 import { Grid } from 'semantic-ui-react';
 
-class Profile extends React.Component {
+class MessageFeed extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
@@ -35,4 +35,4 @@ class Profile extends React.Component {
 	}
 }
 
-export default userIsAuthenticated(Profile);
+export default userIsAuthenticated(MessageFeed);

@@ -5,9 +5,12 @@
   flex-direction: column;
   padding: 0 1em;
   margin: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3%;
   /* border-style: solid;
 	border-color: rgb(185, 184, 184);
-	border-width: 0px 2px 0px 0px; */
+  border-width: 0px 2px 0px 0px; */
 }
 
 #menu-links {

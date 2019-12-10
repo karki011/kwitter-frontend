@@ -1,0 +1,49 @@
+.container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 100vh;
+  grid-template-areas: "left right";
+}
+
+.left-side {
+  grid-area: left;
+  background-image: linear-gradient(#2793fa, #29b5ad);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-side {
+  grid-area: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.prop-value {
+  display: flex;
+  font-family: "Gothic A1 Black", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-size: 20px;
+  margin-top: 25px;
+  margin-left: 20%;
+  z-index: 1;
+}
+
+.prop-icon {
+  margin-right: 20px;
+}
+
+.prop-icon-small {
+  margin-right: 25px;
+}
+
+.shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/shapes.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+}

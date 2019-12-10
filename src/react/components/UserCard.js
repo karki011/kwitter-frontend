@@ -1,38 +1,38 @@
 import React from 'react';
 import { withAsyncAction } from '../HOCs';
+import { connect } from 'react-redux';
 import { Spinner } from '../components';
 import { Card, Icon, Image, Label } from 'semantic-ui-react';
 
 class UserCard extends React.Component {
 	componentDidMount() {
-		this.props.getUser(this.props.username);
+		this.props.getUser(this.props._username);
 	}
 
 	render() {
 		if (this.props.result === null) {
 			return <Spinner name="cicle" color="red" />;
 		}
-		const user = this.props.result.user;
-		console.log('user:', user);
+		// const user = this.props.result.user;
 		return (
 			<React.Fragment>
 				<Card>
 					<Image src={'http://simpleicon.com/wp-content/uploads/user1.svg'} wrapped ui={false} />
 					<Card.Content>
-						<Card.Header>{user.username} </Card.Header>
+						<Card.Header>{this.props.username} </Card.Header>
 						<Card.Meta>
 							<span>
 								<Label>
 									<Icon name="at" />
-									{user.username}
+									{this.props.username}
 								</Label>
 							</span>
 						</Card.Meta>
 						<Card.Meta>
-							<span className="date">Created: {new Date(user.createdAt).toDateString()}</span>
+							<span className="date">Created: {new Date(this.props.createdAt).toDateString()}</span>
 						</Card.Meta>
 						<Card.Description>
-							{user.about ? user.about : 'Stay tuned for the about details'}{' '}
+							{this.props.about ? this.props.about : 'Stay tuned for the about details'}{' '}
 						</Card.Description>
 					</Card.Content>
 					<Card.Content extra>
@@ -47,4 +47,18 @@ class UserCard extends React.Component {
 	}
 }
 
-export default withAsyncAction('users', 'getUser')(UserCard);
+const mapStateToProps = (state) => {
+	if (state.users.getUser.result) {
+		return {
+			loggedIn: state.auth.login.result.username,
+			username: state.users.getUser.result.user.username,
+			pictureLocation: state.users.getUser.result.user.pictureLocation,
+			displayName: state.users.getUser.result.user.displayName,
+			about: state.users.getUser.result.user.about,
+			googleId: state.users.getUser.result.user.googleId,
+			createdAt: state.users.getUser.result.user.createdAt,
+			updatedAt: state.users.getUser.result.user.updatedAt
+		};
+	} else return {};
+};
+export default connect(mapStateToProps)(withAsyncAction('users', 'getUser')(UserCard));

@@ -3,7 +3,6 @@ import { Feed, Icon } from 'semantic-ui-react';
 // import { userIsAuthenticated } from '../HOCs';
 import { withAsyncAction } from '../HOCs';
 import { Spinner } from '../components';
-// import SearchPage from './SearchPage';
 
 class RecentMessageFeed extends React.Component {
 	render() {
