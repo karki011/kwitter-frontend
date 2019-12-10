@@ -24,7 +24,7 @@ class Profile extends React.Component {
 							<MessageList username={this.props.username} />
 						</Grid.Column>
 						<Grid.Column width={3}>
-							<SearchPage username={this.props.username} />
+							<SearchPage />
 							<RecentMessageFeed />
 						</Grid.Column>
 					</Grid.Row>

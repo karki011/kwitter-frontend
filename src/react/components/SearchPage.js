@@ -1,26 +1,23 @@
 import React from 'react';
 import { withAsyncAction } from '../HOCs';
 import { Spinner } from '../components';
-import { Feed } from 'semantic-ui-react';
+import { Dropdown } from 'semantic-ui-react';
 
 class SearchPage extends React.Component {
 	render() {
 		if (this.props.result === null) {
-			return <Spinner name="cicle" color="red" />;
+			return <Spinner name="cicle" color="blue" />;
 		}
 		const users = this.props.result.messages;
-		console.log('users:', users);
-		let user = [];
-		users.forEach((element) => user.push(element['username']));
-		console.log('user:', user);
+		let data = [];
+
+		users.forEach((element) => data.push(element['username']));
+
+		console.log('user:', users);
 
 		return (
-			<React.Fragment>
-				<Feed>
-					<Feed.Content>
-						<Feed.Summary>hi</Feed.Summary>
-					</Feed.Content>
-				</Feed>
+			<React.Fragment key={users.text}>
+				<Dropdown placeholder="Search" fluid search selection options={users} />
 			</React.Fragment>
 		);
 	}

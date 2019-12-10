@@ -17,7 +17,7 @@ class RecentMessageFeed extends React.Component {
 					<Feed.Event>
 						<Feed.Content>
 							<Feed.Summary>
-								<Icon name="at" />
+								<Icon name="user" />&nbsp;
 								{message.username}
 								{/* <Feed.Date>{message.createdAt}</Feed.Date> */}
 							</Feed.Summary>
