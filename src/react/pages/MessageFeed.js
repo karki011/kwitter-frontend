@@ -27,6 +27,7 @@ class MessageFeed extends React.Component {
 						</Grid.Column>
 						<Grid.Column width={3}>
 							<FontAwesomeIcon icon={faKiwiBird} id="kwitterIcon" />
+							<h3>Who to follow</h3>
 							<hr />
 							<RecentMessageFeed />
 						</Grid.Column>

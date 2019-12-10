@@ -8,6 +8,13 @@ class MessageList extends React.Component {
 	componentDidMount() {
 		this.props.getMessages(this.props.username);
 	}
+
+	componentDidUpdate(prevProps){
+		if(prevProps.username !== this.props.username){
+		  this.props.getMessages(this.props.username);
+		}
+	  }
+
 	render() {
 		if (this.props.result === null) {
 			return <Spinner name="cicle" color="red" />;

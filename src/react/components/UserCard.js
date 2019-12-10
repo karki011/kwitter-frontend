@@ -6,9 +6,17 @@ import { Card, Icon, Image, Label } from "semantic-ui-react";
 
 class UserCard extends React.Component {
   componentDidMount() {
-    this.props.getUser(this.props._username);
+    if (this.props._username) {
+      this.props.getUser(this.props._username);
+    }
   }
-  
+
+  componentDidUpdate(prevProps) {
+    if (prevProps._username !== this.props._username) {
+      this.props.getUser(this.props._username);
+    }
+  }
+
   render() {
     if (this.props.result === null) {
       return <Spinner name="cicle" color="red" />;
@@ -38,7 +46,9 @@ class UserCard extends React.Component {
               </span>
             </Card.Meta>
             <Card.Description>
-              {this.props.about ? this.props.about : "Stay tuned for the about details"}{" "}
+              {this.props.about
+                ? this.props.about
+                : "Stay tuned for the about details"}{" "}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>

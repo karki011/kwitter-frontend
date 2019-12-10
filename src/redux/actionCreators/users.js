@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from './constants';
-import { GETUSER, DELETEUSER, POSTUSER } from '../actionTypes';
+import { GETUSER, GETUSERLIST, DELETEUSER, POSTUSER } from '../actionTypes';
 import { push } from 'connected-react-router';
 import { logout, login } from './auth';
 
@@ -21,6 +21,25 @@ export const getUser = (username) => (dispatch) => {
 		})
 		.catch((err) => {
 			return Promise.reject(dispatch({ type: GETUSER.FAIL, payload: err }));
+		});
+};
+
+export const getUserList = () => (dispatch) => {
+	dispatch({ type: GETUSERLIST.START });
+	 
+	return fetch(url+"?limit=20" , {
+		method: 'GET',
+		headers: jsonHeaders
+	})
+		.then(handleJsonResponse)
+		.then((result) => {
+			return dispatch({
+				type: GETUSERLIST.SUCCESS,
+				payload: result
+			});
+		})
+		.catch((err) => {
+			return Promise.reject(dispatch({ type: GETUSERLIST.FAIL, payload: err }));
 		});
 };
 

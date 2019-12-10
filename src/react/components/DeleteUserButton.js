@@ -11,9 +11,15 @@ class DeleteUserButton extends React.Component {
   };
   render() {
     return (
+      <React.Fragment>
+      {this.props.currentUser === this.props._username && (
+
       <Button onClick={this.handleDelete} color="teal">
         Delete My Account
       </Button>
+      
+      )}
+      </React.Fragment>
     );
   }
 }
