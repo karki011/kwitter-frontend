@@ -9,7 +9,8 @@ import {
 import { userIsAuthenticated } from "../HOCs";
 import { Grid } from "semantic-ui-react";
 
-class UserProfileEdit extends React.Component {
+class Profile extends React.Component {
+
   render() {
     return (
       <React.Fragment>
@@ -20,11 +21,13 @@ class UserProfileEdit extends React.Component {
             </Grid.Column>
             <Grid.Column width={10}>
               <UserCard
-                username={JSON.parse(localStorage.login).result.username}
+                _username={this.props.match.params.username}
               />
               <DeleteUserButton />
               <h3>My Kweets</h3>
-							<MessageList username ={JSON.parse(localStorage.login).result.username} />
+              <MessageList
+                username={this.props.match.params.username}
+              />
             </Grid.Column>
             <Grid.Column width={3}>
               <RecentMessageFeed />
@@ -36,4 +39,5 @@ class UserProfileEdit extends React.Component {
   }
 }
 
-export default userIsAuthenticated(UserProfileEdit);
+
+export default userIsAuthenticated(Profile)

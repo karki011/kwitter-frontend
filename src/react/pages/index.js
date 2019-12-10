@@ -1,13 +1,13 @@
 import Home from "./Home";
-import Profile from "./Profile";
+import MessageFeed from "./MessageFeed";
 import NotFound from "./NotFound";
 import Register from "./Register";
-import UserProfileEdit from "./UserProfileEdit";
+import Profile from "./UserProfileEdit";
 
 export default {
   Home: { path: "/", component: Home },
-  Profile: { path: "/profile/:username", component: Profile },
+  MessageFeed: { path: "/MessageFeed/", component: MessageFeed },
   Signup: { path: "/signup", component: Register },
-  Edit: { path: "/edit/", component: UserProfileEdit },
+  Profile: { path: "/profile/:username", component: Profile },
   NotFound: { path: "*", component: NotFound }
 };
