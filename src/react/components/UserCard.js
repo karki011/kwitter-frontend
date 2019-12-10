@@ -3,6 +3,7 @@ import { withAsyncAction } from "../HOCs";
 import { connect } from "react-redux";
 import { Spinner } from "../components";
 import { Card, Icon, Image, Label } from "semantic-ui-react";
+import UploadUserPicture from "./UploadUserPicture";
 
 class UserCard extends React.Component {
   componentDidMount() {
@@ -18,7 +19,11 @@ class UserCard extends React.Component {
       <React.Fragment>
         <Card>
           <Image
-            src={"http://simpleicon.com/wp-content/uploads/user1.svg"}
+            src={
+              user.pictureLocation
+                ? "https://kwitter-api.herokuapp.com" + user.pictureLocation
+                : "http://simpleicon.com/wp-content/uploads/user1.svg"
+            }
             wrapped
             ui={false}
           />
@@ -47,6 +52,7 @@ class UserCard extends React.Component {
               22 Friends
             </p>
           </Card.Content>
+          <UploadUserPicture username={this.props.username} />
         </Card>
       </React.Fragment>
     );
