@@ -12,5 +12,4 @@ pages:
       - public
   only:
     - master
-variables:
-  PUBLIC_URL: "assessment---kwitter-frontend/"
+
