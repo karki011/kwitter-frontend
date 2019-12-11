@@ -29,7 +29,7 @@ class UserCard extends React.Component {
           <Image
             src={
               user.pictureLocation
-                ? "https://kwitter-api.herokuapp.com" + user.pictureLocation
+                ? "https://kwitta-api.herokuapp.com" + user.pictureLocation
                 : "http://simpleicon.com/wp-content/uploads/user1.svg"
             }
             wrapped
