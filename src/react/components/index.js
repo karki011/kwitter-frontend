@@ -7,6 +7,7 @@ export { default as RecentMessageFeed } from "./RecentMessageFeed";
 export { default as SignUpForm } from "./SignUpForm";
 export { default as UserCard } from "./UserCard";
 export { default as DeleteUserButton } from "./DeleteUserButton";
+export { default as UploadUserPicture } from "./UploadUserPicture";
 
 // components from other packages
 export { Switch, Route, Link, NavLink } from "react-router-dom";
