@@ -1,7 +1,7 @@
-import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { GETUSER, DELETEUSER, POSTUSER, PUTUSERPICTURE } from "../actionTypes";
-import { push } from "connected-react-router";
-import { logout, login } from "./auth";
+import { domain, jsonHeaders, handleJsonResponse } from './constants';
+import { GETUSER, GETUSERLIST, DELETEUSER, POSTUSER, PUTUSERPICTURE } from '../actionTypes';
+import { push } from 'connected-react-router';
+import { logout, login } from './auth';
 
 const url = domain + "/users";
 
@@ -24,8 +24,28 @@ export const getUser = username => dispatch => {
     });
 };
 
-let username = "";
-let token = "";
+export const getUserList = () => (dispatch) => {
+	dispatch({ type: GETUSERLIST.START });
+	 
+	return fetch(url+"?limit=20" , {
+		method: 'GET',
+		headers: jsonHeaders
+	})
+		.then(handleJsonResponse)
+		.then((result) => {
+			return dispatch({
+				type: GETUSERLIST.SUCCESS,
+				payload: result
+			});
+		})
+		.catch((err) => {
+			return Promise.reject(dispatch({ type: GETUSERLIST.FAIL, payload: err }));
+		});
+};
+
+
+let username = '';
+let token = '';
 
 export const _deleteUser = () => (dispatch, getState) => {
   dispatch({ type: DELETEUSER.START });
