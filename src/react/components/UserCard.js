@@ -14,7 +14,7 @@ class UserCard extends React.Component {
     if (this.props.result === null) {
       return <Spinner name="cicle" color="red" />;
     }
-    // const user = this.props.result.user;
+    const user = this.props.result.user;
     return (
       <React.Fragment>
         <Card>
